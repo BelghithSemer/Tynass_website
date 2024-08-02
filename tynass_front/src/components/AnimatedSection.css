@@ -1,0 +1,49 @@
+.animated-section {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .scrolling-text {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    animation: scroll-text 20s linear infinite; /* Slowed down to 20s */
+  }
+  
+  .scrolling-text span {
+    display: inline-block;
+    padding-left: 100%;
+    font-size: 3em; /* Increased font size */
+    animation: scroll-text 40s linear infinite; /* Slowed down to 20s */
+  }
+  
+  @keyframes scroll-text {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .static-text p {
+    font-size: 2em; /* Increased font size */
+    margin: 20px 0;
+  }
+  
+  .static-text h2 {
+    font-size: 3em; /* Increased font size */
+    margin: 20px 0;
+  }
+  
+  .highlight-red {
+    color: #e71d36;
+  }
+  
+  .highlight-blue {
+    color: #007bff;
+  }
+  

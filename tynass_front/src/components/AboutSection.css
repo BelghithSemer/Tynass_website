@@ -1,0 +1,119 @@
+.framer-uj0svf {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    z-index: 10; /* Ensure this is set */
+}
+
+.framer-12k3t0a {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1 0 0px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 160px;
+    height: min-content;
+    justify-content: center;
+    max-width: 1168px;
+    overflow: visible;
+    padding: 30px 24px;
+    position: relative;
+    width: 1px;
+    z-index: 10; /* Ensure this is set */
+}
+
+.framer-1d1cp0z-container {
+    flex: none;
+    height: auto;
+    position: sticky;
+    top: 288px;
+    width: 773px;
+    will-change: transform;
+    z-index: 10; /* Ensure this is set */
+}
+
+.framer-tBmD3 {
+    display: block;
+    z-index: 10; /* Ensure this is set */
+}
+
+.framer-m1vqha {
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 32px;
+    height: auto;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 640px;
+    z-index: 10; /* Ensure this is set */
+}
+
+.framer-1vjzcm6 {
+    flex: none;
+    height: auto;
+    mix-blend-mode: hard-light;
+    position: relative;
+    white-space: pre-wrap;
+    width: 100%;
+    word-break: break-word;
+    word-wrap: break-word;
+    z-index: 10; /* Ensure this is set */
+}
+
+.framer-e0ko0h,
+.framer-16m22ab,
+.framer-1yybvl1,
+.framer-dwpo98,
+.framer-12k1m1i,
+.framer-1jgc95h,
+.framer-1t5c25a {
+    background-color: var(--token-68e8bb38-c584-4d6a-bdc9-edc8ff84d6b5, #000000);
+    flex: none;
+    height: 39px;
+    overflow: hidden;
+    position: relative;
+    width: 260px;
+    z-index: 1; /* Lower z-index to ensure it stays behind */
+}
+
+.framer-text {
+    color: rgb(129, 123, 111); /* Ensure this matches the color in your HTML */
+    z-index: 10; /* Ensure this is set */
+    font-family: 'Mona Sans Regular', sans-serif; /* Set the font family */
+    font-size: 36px; /* Set the text size */
+}
+
+.text-container {
+    box-sizing: border-box;
+    width: 1168px;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 24px;
+    max-width: 1168px;
+    overflow: visible;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 160px;
+    position: absolute;
+    border-radius: 0px;
+}

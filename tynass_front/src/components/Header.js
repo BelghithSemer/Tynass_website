@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Menu from './Menu';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -20,11 +21,20 @@ const ContactButton = styled.button`
   cursor: pointer;
 `;
 
-const Header = () => {
+const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Add space between Contact button and Menu */
+`;
+
+const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <HeaderContainer>
       <Logo>Tynass</Logo>
-      <ContactButton>Contact Us</ContactButton>
+      <ButtonWrapper>
+        <ContactButton>Contact Us</ContactButton>
+        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      </ButtonWrapper>
     </HeaderContainer>
   );
 };
