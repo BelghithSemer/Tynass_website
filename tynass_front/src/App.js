@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
-import Header from './components/Header';
-import MainSection from './components/MainSection';
-import Footer from './components/Footer';
-import Menu from './components/Menu';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import TripTemplate from './components/TripTemplate';
+import TripsList from './components/TripList';
+import TripDetail from './components/TripDetail';
 import styled from 'styled-components';
 import './App.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import AboutSection from './components/AboutSection';
-import ProjectCard from './components/ProjectCard';
-import AnimatedSection from './components/AnimatedSection';
-import StoriesSection from './components/StoriesSection';
 
 const AppContainer = styled.div`
   background-color: black;
@@ -20,35 +15,54 @@ const AppContainer = styled.div`
   justify-content: space-between;
 `;
 
-const projects = [
-  {
-    title: "Farhat Hached VR/Web Experience",
-    overview: "The Farhat Hached VR gallery takes users on an immersive virtual reality journey, providing a glimpse into the life, achievements, and rare moments of Farhat Hached. Through a curated collection of rare photos and videos, users can delve into the significant events and contributions of this historical figure.",
-    vision: "Immerse users in Farhat Hached's legacy through a captivating VR gallery, offering unique insight into his life and contributions, fostering appreciation and understanding.",
-    buttonText: "Try Web Experience",
-    imageUrl: "/assets/farhet_hached.png",
-    link: "#"
-  },
-  // Add more projects here
-];
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [tripDetails, setTripDetails] = useState({
+    title: 'THE OLD MEDINA FOUNDATION',
+    description: 'Invites you to embark on an exceptional auto-guided journey...',
+    location: 'Tunis',
+    language: 'Multi',
+    numPlaces: 15,
+    price: '25DT per user',
+    imageUrl: './logo512.png',
+    contactButton: 'Contact Us',
+    packsButton: 'Check Our Packs'
+  });
+
+  const handleDetailsChange = (updatedDetails) => {
+    setTripDetails(updatedDetails);
+  };
+
+  const handleSave = (updatedDetails) => {
+    // Handle the save action, e.g., send the updated details to a server or save locally
+    console.log('Saved Details:', updatedDetails);
+    // For example, you might want to make an API call to save the details
+  };
 
   return (
     <AppContainer>
-      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <MainSection />
-      <AboutSection/>
-      <AnimatedSection></AnimatedSection>
-      
-      <div className="projects-container">
-      {projects.map((project, index) => (
-        <ProjectCard key={index} {...project} />
-      ))}
-    </div>
-    <StoriesSection/>
-      <Footer />
-      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Router>
+        <div>
+          <nav className="navbar">
+            <Link to="/">Home</Link>
+            <Link to="/trips">Tynass Trips</Link>
+          </nav>
+
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <TripTemplate
+                  initialDetails={tripDetails}
+                  onDetailsChange={handleDetailsChange}
+                  onSave={handleSave}
+                />
+              }
+            />
+            <Route path="/trips" element={<TripsList />} />
+            <Route path="/trips/:id" element={<TripDetail />} />
+          </Routes>
+        </div>
+      </Router>
     </AppContainer>
   );
 }

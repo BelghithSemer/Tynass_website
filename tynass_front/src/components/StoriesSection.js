@@ -7,13 +7,13 @@ const StoriesSection = () => {
       <h2>AR & Social Media Experiences</h2>
       <div className="stories-container">
         <div className="story">
-          <video src="./path/to/video1.mp4" muted loop autoPlay></video>
+          <video src="/assets/vid1.mp4" muted loop autoPlay></video>
         </div>
         <div className="story">
-          <video src="./path/to/video2.mp4" muted loop autoPlay></video>
+          <video src="/assets/vid2.mp4" muted loop autoPlay></video>
         </div>
         <div className="story">
-          <video src="./path/to/video3.mp4" muted loop autoPlay></video>
+          <video src="assets/vid3.mp4" muted loop autoPlay></video>
         </div>
         {/* Add more stories as needed */}
       </div>

@@ -1,0 +1,1 @@
+package com.tynass.tynass_backend;import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootApplication;@SpringBootApplicationpublic class TynassBackendApplication {    public static void main(String[] args) {        SpringApplication.run(TynassBackendApplication.class, args);    }}
