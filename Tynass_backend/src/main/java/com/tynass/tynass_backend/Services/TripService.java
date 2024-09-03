@@ -13,8 +13,8 @@ public class TripService {
     @Autowired
     private TripRepository tripRepository;
 
-    public void saveTrip(Trip trip) {
-        tripRepository.save(trip);
+    public Trip saveTrip(Trip trip) {
+        return tripRepository.save(trip);
     }
 
 

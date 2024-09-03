@@ -1,5 +1,6 @@
 import React from 'react';
 import './Menu.css';
+import { Link } from 'react-router-dom';
 
 const Menu = ({ menuOpen, setMenuOpen }) => {
   const toggleMenu = () => {
@@ -15,12 +16,16 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
         <table className="menu-table">
           <tbody>
             <tr>
-              <td><a href="/">Home</a></td>
+              <td><Link to="/home" onClick={() => setMenuOpen(false)}>
+                Home
+              </Link></td>
               <td><a href="/about">About</a></td>
             </tr>
             <tr>
               <td><a href="/projects">Projects</a></td>
-              <td><a href="/articles">Articles</a></td>
+              <td><Link to="/trips" onClick={() => setMenuOpen(false)}>
+                Trips
+              </Link></td>
             </tr>
           </tbody>
         </table>

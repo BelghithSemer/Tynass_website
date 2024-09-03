@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const TripList = () => {
   const [trips, setTrips] = useState([]); // Initialize as an empty array
@@ -9,8 +10,9 @@ const TripList = () => {
   useEffect(() => {
     const fetchTrips = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/trips');
+        const response = await axios.get('http://localhost:8080/trips/show');
         const data = Array.isArray(response.data) ? response.data : []; // Ensure it's an array
+        //console.log('Result',response.data)
         setTrips(data);
       } catch (err) {
         setError('Failed to fetch trips.'); // Set error message
@@ -33,7 +35,7 @@ const TripList = () => {
       {trips.length > 0 ? (
         <ul>
           {trips.map(trip => (
-            <li key={trip.id}>{trip.tynassTripName}</li> // Display trip names
+            <li key={trip.id}><Link to={`/trips/${trip.id}`}>{trip.title}</Link></li> // Display trip names
           ))}
         </ul>
       ) : (

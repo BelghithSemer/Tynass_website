@@ -15,7 +15,7 @@ const StoriesSection = () => {
         <div className="story">
           <video src="assets/vid3.mp4" muted loop autoPlay></video>
         </div>
-        {/* Add more stories as needed */}
+        
       </div>
     </div>
   );

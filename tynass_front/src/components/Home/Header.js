@@ -19,6 +19,7 @@ const ContactButton = styled.button`
   border-radius: 20px;
   padding: 10px 20px;
   cursor: pointer;
+  color: black;
 `;
 
 const ButtonWrapper = styled.div`

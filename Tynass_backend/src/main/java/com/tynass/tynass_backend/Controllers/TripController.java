@@ -9,28 +9,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/trips")
 @CrossOrigin(origins = "http://localhost:3000")
 public class TripController {
 
     @Autowired
     private TripService tripService;
-
-    @PostMapping("/trips")
-    public ResponseEntity<String> saveTrip(@RequestBody Trip trip) {
-        try {
-            tripService.saveTrip(trip);
-            return ResponseEntity.ok("HTML content saved successfully");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error saving HTML content");
-        }
+    @PostMapping("/save")
+    public Trip saveTrip(@RequestBody Trip trip) {
+           return  tripService.saveTrip(trip);
     }
-    @GetMapping("/trips")
+    @GetMapping("/show")
     public List<Trip> getAllTrips() {
         return tripService.getAllTrips();
     }
-    @GetMapping("/trips/{id}")
+
+    @GetMapping("/show/{id}")
     public ResponseEntity<Trip> getTripById(@PathVariable String id) {
         Trip trip = tripService.getTripById(id);
         if (trip != null) {

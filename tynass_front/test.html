@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div
+  style={{
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: 'black',
+    color: 'white',
+    height: '100vh',
+    padding: '20px',
+    fontFamily: 'Arial, sans-serif',
+  }}
+>
+  <div style={{ flex: 1, paddingRight: '20px', marginLeft: '80px', textAlign: 'justify' }}>
+    <h1 style={{ marginBottom: '25px' }}>{details.title}</h1>
+    <p>{details.description}</p>
+    <h2 style={{ marginBottom: '25px' }}>Trip Info :</h2>
+    <ul style={{ paddingRight: '20px' }}>
+      <li>📜 Trip Language: {details.language}</li>
+      <li>📍 Location: {details.location}</li>
+      <li>🧑‍🤝‍🧑 Number of places in the trip: {details.numPlaces}</li>
+      <li>💵 Price: {details.price}</li>
+    </ul>
+    <div style={{ display: 'flex', gap: '20px', marginTop: '20px', marginBottom: '20px', width: '100%', height: '55px' }}>
+      <button
+        style={{
+          backgroundColor: '#007bff',
+          color: 'white',
+          padding: '10px 20px',
+          border: 'none',
+          cursor: 'pointer',
+          fontSize: '1em',
+          borderRadius: '5px',
+        }}
+      >
+        {details.contactButton}
+      </button>
+      <button
+        style={{
+          backgroundColor: '#FF1D58',
+          color: 'white',
+          padding: '10px 20px',
+          border: 'none',
+          cursor: 'pointer',
+          fontSize: '1em',
+          borderRadius: '5px',
+        }}
+      >
+        {details.packsButton}
+      </button>
+    </div>
+    <p style={{ fontSize: '1em', marginTop: '20px' }}>SCROLL DOWN FOR MORE ⬇️</p>
+  </div>
+  <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <img src={details.imageUrl} alt="Trip" style={{ maxWidth: '100%', height: 'auto' }} />
+  </div>
+</div>
+
+</body>
+</html>

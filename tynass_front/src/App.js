@@ -6,13 +6,14 @@ import TripDetail from './components/TripDetail';
 import styled from 'styled-components';
 import './App.css';
 
+import Home from './components/Home/Home';
+import Header from './components/Home/Header';
 const AppContainer = styled.div`
   background-color: black;
   color: white;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
 `;
 
 function App() {
@@ -21,17 +22,35 @@ function App() {
     description: 'Invites you to embark on an exceptional auto-guided journey...',
     location: 'Tunis',
     language: 'Multi',
-    numPlaces: 15,
-    price: '25DT per user',
-    imageUrl: './logo512.png',
-    contactButton: 'Contact Us',
-    packsButton: 'Check Our Packs'
+    numberOfPlaces: 15,
+    price: 25,
+    imageUrl: '/tynasstripone.png',
+    
+    /// second section 
+    tunisianAudio: '',
+    englishAudio:'',
+    frenchAudio:'',
+    adventurePlaces: [
+      { title: 'Zitouna Mosque', imageUrl: '/zitouna_mosquee.png' },
+      { title: 'Zitouna Street', imageUrl: '/zytouna_street.png' },
+      { title: 'Beb Bhar', imageUrl: '/beb_bhar.png' },
+      { title: 'Attarin market', imageUrl: '/attarin_market.png' }
+    ],
+    storys : [
+      "/assets/vid1.mp4",
+      "/assets/vid2.mp4",
+      "/assets/vid2.mp4",
+      "/assets/vid3.mp4"
+    ]
+
+
   });
 
   const handleDetailsChange = (updatedDetails) => {
     setTripDetails(updatedDetails);
   };
 
+  const [menuOpen, setMenuOpen] = useState(false);
   const handleSave = (updatedDetails) => {
     // Handle the save action, e.g., send the updated details to a server or save locally
     console.log('Saved Details:', updatedDetails);
@@ -42,11 +61,8 @@ function App() {
     <AppContainer>
       <Router>
         <div>
-          <nav className="navbar">
-            <Link to="/">Home</Link>
-            <Link to="/trips">Tynass Trips</Link>
-          </nav>
-
+        
+        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
           <Routes>
             <Route
               path="/"
@@ -58,6 +74,7 @@ function App() {
                 />
               }
             />
+            <Route path="/home" element={<Home />} />
             <Route path="/trips" element={<TripsList />} />
             <Route path="/trips/:id" element={<TripDetail />} />
           </Routes>
