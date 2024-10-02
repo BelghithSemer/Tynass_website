@@ -37,10 +37,10 @@ function App() {
       { title: 'Attarin market', imageUrl: '/attarin_market.png' }
     ],
     storys : [
-      "/assets/vid1.mp4",
-      "/assets/vid2.mp4",
-      "/assets/vid2.mp4",
-      "/assets/vid3.mp4"
+      "/assets/video.mp4",
+      "/assets/video.mp4",
+      "/assets/video.mp4",
+      "/assets/video.mp4"
     ]
 
 

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './TripInfo.css';
-
+import './forthsection.css';
+import Forthsection from './Forthsection';
 
 const TripDetail = () => {
   const { id } = useParams();
@@ -160,7 +161,7 @@ const TripDetail = () => {
   <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '20px' }}>
     {trip.storys.map((story, index) => (
       <div key={index} style={{ width: '250px', height: '450px', backgroundColor: '#333', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', borderRadius: '10px', padding: '10px', textAlign: 'center' }}>
-        <video style={{ width: '100%', height: 'auto', borderRadius: '10px' }} autoplay loop muted>
+        <video style={{ width: '100%', height: 'auto', borderRadius: '10px' }} autoplay loop muted controls>
           <source src={story} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -170,6 +171,8 @@ const TripDetail = () => {
   </div>
 </div>
 {/* End Third Section */}
+{/* 4th */}
+<Forthsection></Forthsection>
     </div>
   );
 };

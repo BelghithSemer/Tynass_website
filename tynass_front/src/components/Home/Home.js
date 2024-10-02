@@ -31,8 +31,7 @@ const Home = () => {
 
 
         <StoriesSection/>
-       
-      
+        
 
     </>
   );

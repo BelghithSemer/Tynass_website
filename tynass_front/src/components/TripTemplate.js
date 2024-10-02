@@ -631,6 +631,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import Modal from './Modal';
 import './TripInfo.css';
+import Forthsection from './Forthsection';
 
 const TripTemplate = ({ initialDetails, onSave }) => {
   const [details, setDetails] = useState(initialDetails);
@@ -1138,7 +1139,7 @@ const TripTemplate = ({ initialDetails, onSave }) => {
   <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '20px' }}>
     {details.storys.map((story, index) => (
       <div key={index} style={{ width: '250px', height: '450px', backgroundColor: '#333', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', borderRadius: '10px', padding: '10px', textAlign: 'center' }}>
-        <video style={{ width: '100%', height: 'auto', borderRadius: '10px' }} autoplay loop muted>
+        <video style={{ width: '100%', height: 'auto', borderRadius: '10px' }} autoPlay controls>
           <source src={story} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -1148,7 +1149,10 @@ const TripTemplate = ({ initialDetails, onSave }) => {
   </div>
 </div>
 {/* End Third Section */}
-      
+      {/* 4th */}
+      <div>
+      <Forthsection/>
+    </div>
     </div>
   );
 };

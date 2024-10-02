@@ -16,13 +16,14 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
         <table className="menu-table">
           <tbody>
             <tr>
-              <td><Link to="/home" onClick={() => setMenuOpen(false)}>
+              <td><Link to="https://comprehensive-pyramid-480886.framer.app/" onClick={() => setMenuOpen(false)}>
                 Home
               </Link></td>
-              <td><a href="/about">About</a></td>
+              <td><a href="https://handsholdinginc.online/">About</a></td>
             </tr>
             <tr>
               <td><a href="/projects">Projects</a></td>
+              <td><a href="https://automaticartinc.net/">Tynas trips</a></td>
               <td><Link to="/trips" onClick={() => setMenuOpen(false)}>
                 Trips
               </Link></td>
